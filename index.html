@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Eclipse CheatSheet Plugin (.jar)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      max-width: 580px;
+      width: 100%;
+      padding: 32px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      text-align: center;
+    }
+
+    .icon-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      background: #2563eb;
+      color: white;
+      font-size: 30px;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    p.subtitle {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    /* Main Download Button */
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 24px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.5);
+      transition: all 0.2s ease;
+    }
+
+    .download-btn:hover {
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.6);
+    }
+
+    .download-btn:active {
+      transform: translateY(0);
+    }
+
+    .status-msg {
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #10b981;
+      display: none;
+    }
+
+    /* Instructions Box */
+    .steps-container {
+      margin-top: 28px;
+      text-align: left;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+
+    .steps-header {
+      font-size: 12px;
+      font-weight: 700;
+      color: #60a5fa;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .step-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .step-num {
+      background: #334155;
+      color: #cbd5e1;
+      font-size: 11px;
+      font-weight: 800;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-text {
+      font-size: 13px;
+      color: #e2e8f0;
+      line-height: 1.4;
+    }
+
+    .code-pill {
+      font-family: Consolas, monospace;
+      background: #1e293b;
+      color: #38bdf8;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      border: 1px solid #334155;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="icon-badge">📦</div>
+    <h1>FSJP Practical CheatSheet Plugin</h1>
+    <p class="subtitle">Click below to download the Eclipse plug-in JAR file and place it into Eclipse's dropins folder.</p>
+
+    <!-- Download Button -->
+    <button class="download-btn" id="downloadBtn" onclick="triggerDownload()">
+      <span>📥</span>
+      <span>Download com.fsjp.cheatsheets_1.0.0.jar</span>
+    </button>
+
+    <div class="status-msg" id="statusMsg">✅ Download Started! Check your Downloads folder.</div>
+
+    <!-- 3-Step Setup Instructions -->
+    <div class="steps-container">
+      <div class="steps-header">What to do after download:</div>
+
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          Open your <b>Downloads</b> folder and locate <span class="code-pill">com.fsjp.cheatsheets_1.0.0.jar</span>.
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          Move or copy the file into your Eclipse's <span class="code-pill">dropins</span> folder.<br/>
+          <span style="font-size:11.5px; color:#94a3b8;">(Tip: Right-click Eclipse icon &rarr; <b>Open file location</b> &rarr; open <b>dropins</b>)</span>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          Open or restart <b>Eclipse</b> &rarr; go to <b>Help</b> &rarr; <b>Cheat Sheets...</b> &rarr; select <b>FSJP Practical Code Catalog</b> &rarr; click <b>OK</b>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>FSJP Practical Exam Companion • Ready for Eclipse 2020 - 2026</footer>
+
+  <script>
+    // Embedded authentic base64 binary of com.fsjp.cheatsheets_1.0.0.jar
+    // Contains: plugin.xml, cheatsheet.xml (all 10 experiments), META-INF/MANIFEST.MF
+    const JAR_BASE64 = "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";
+
+    function triggerDownload() {
+      try {
+        // Convert base64 string to a binary Uint8Array
+        const binaryString = atob(JAR_BASE64);
+        const len = binaryString.length;
+        const bytes = new Uint8Array(len);
+        for (let i = 0; i < len; i++) {
+          bytes[i] = binaryString.charCodeAt(i);
+        }
+
+        // Create a downloadable Blob with application/java-archive MIME type
+        const blob = new Blob([bytes], { type: "application/java-archive" });
+        const url = URL.createObjectURL(blob);
+
+        // Create temporary link and click it
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "com.fsjp.cheatsheets_1.0.0.jar";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+
+        // Show feedback message
+        const status = document.getElementById("statusMsg");
+        status.style.display = "block";
+      } catch (err) {
+        alert("Download failed: " + err.message);
+      }
+    }
+
+    // Optional: Check if URL has ?auto=true to automatically trigger download on load
+    window.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("auto") === "true") {
+        setTimeout(triggerDownload, 400);
+      }
+    });
+  </script>
+</body>
+</html>
